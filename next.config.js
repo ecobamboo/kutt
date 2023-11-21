@@ -1,6 +1,15 @@
 const { parsed: localEnv } = require("dotenv").config();
 
 module.exports = {
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: 'https://ecobamboo.cz',
+        permanent: true,
+      },
+    ]
+  },
   publicRuntimeConfig: {
     CONTACT_EMAIL: localEnv && localEnv.CONTACT_EMAIL,
     SITE_NAME: localEnv && localEnv.SITE_NAME,
